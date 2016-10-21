@@ -1,0 +1,31 @@
+  <sebm-google-map 
+      [latitude]="lat"
+      [longitude]="lng"
+      [zoom]="zoom"
+      [disableDefaultUI]="false"
+      [zoomControl]="false">
+    
+      <sebm-google-map-marker 
+          *ngFor="let m of waypoints"      
+          [latitude]="m.lat"
+          [longitude]="m.lng"
+          [label]="m.label"
+          [markerDraggable]="m.draggable"
+          (dragEnd)="markerDragEnd(m, $event)">
+          
+        <sebm-google-map-info-window>
+          <strong>Latitude:{{m.lat}}, longitude:{{m.lng}}</strong>
+        </sebm-google-map-info-window>
+        
+      </sebm-google-map-marker>
+                 <sebm-google-map-polyline>
+         <sebm-google-map-polyline-point 
+         *ngFor="let m of waypoints"
+         [latitude]="m.lat" 
+         [longitude]="m.lng">
+
+         </sebm-google-map-polyline-point>
+     </sebm-google-map-polyline>
+      
+
+    </sebm-google-map>

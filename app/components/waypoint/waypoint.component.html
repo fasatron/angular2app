@@ -1,0 +1,5 @@
+  <div class="ui checkbox">
+    <input type="checkbox" (change)="toggleDone()">
+    <label [ngClass]="{done: waypoint.done}">{{ waypoint.label }}</label>
+  </div>
+  <button class="ui red icon button" (click)="delete()"><i class="trash outline icon"></i></button>

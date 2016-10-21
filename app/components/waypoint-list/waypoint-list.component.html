@@ -1,0 +1,5 @@
+	<div class="ui raised segment" *ngIf="waypoints.length">
+		<div id="waypoints" class="ui middle aligned divided selection list">
+			<waypoint *ngFor="let waypoint of waypoints" [waypoint]="waypoint" (deleted)="onWaypointDeleting($event)"></waypoint>
+			</div>
+	</div>
